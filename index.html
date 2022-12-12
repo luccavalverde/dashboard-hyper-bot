@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard HypeBot</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- CONFIGURAÇÃO GRÁFICO DE ACESSOS -->
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Mês', 'Acessos'],
+                ['Jan', 50],
+                ['Fev', 25],
+                ['Mar', 65],
+                ['Abr', 80],
+                ['Mai', 110],
+                ['Jun', 70],
+                ['Jul', 60],
+                ['Ago', 160],
+                ['Set', 200],
+                ['Out', 124],
+                ['Nov', 100],
+                ['Dez', 50]
+
+            ]);
+
+            var options = {
+                title: 'Quantidade de Acessos',
+                hAxis: { title: '', titleTextStyle: { color: '#333' } },
+                vAxis: { minValue: 0 }
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    <!-- CONFIGURAÇÃO GRÁFICO DE SOLUÇÕES -->
+    <script>
+        google.charts.load('current', { packages: ['corechart', 'bar'] });
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['City', 'Soluções', { role: 'style' }],
+                ['Solução Encontrada', 45, '#20105F'],
+                ['Solução Procurada', 10, '#70B4F2'],
+            ]);
+
+            var options = {
+                title: 'Soluções',
+                chartArea: { width: '50%' },
+                hAxis: {
+                    title: '',
+                    minValue: 0
+                },
+                vAxis: {
+                    title: ''
+                }
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart_divbar'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- cabeçalho -->
+    <div class="mainmenu">
+        <img class="logo" src="/imgs/logo.png" height="88px">
+        <div class="rightsidemm">
+            <p class="user">Olá, fulano</p>
+            <img class="profilepic" src="imgs/noprofilepic.png" alt="">
+        </div>
+    </div>
+    <!--  -->
+    <!-- menu lateral -->
+    <nav id="ocultmenu">
+        <a href="#" onclick="fecharMenu()"><img id="closebutton" src="imgs/closemenu.png"></a>
+        <p id="titlemenu">MENU</p>
+    </nav>
+<nav id="menu">
+    <div id="buttonopen">
+    <a href="#" onclick="abrirMenu()"><img src="imgs/arrowsidemenu.png" alt=""></a>
+    </div>
+    <script>
+        function abrirMenu(){
+            document.getElementById('titlemenu').style.color = 'white'
+            document.getElementById('ocultmenu').style.width = '190px';
+            document.getElementById('closebutton').style.width = '11px';
+            document.getElementById('closebutton').style.height = '15px';
+        }
+        function fecharMenu(){
+            document.getElementById('titlemenu').style.color = '#25205C'
+            document.getElementById('ocultmenu').style.width = '0px'; style.color = '#25205C';
+            document.getElementById('closebutton').style.width = '0px';
+            document.getElementById('closebutton').style.height = '0px';
+            
+        }
+    </script>
+</nav>
+    <!-- painel principal -->
+    <div class="dash">
+        <h1 class="tittle">Hyper BOT</h1>
+        <h2 class="top-of-select">Periodo</h2>
+        <div class="selectbox">
+            <select>
+                <option value="0">Selecione o periodo desejado </option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+        </div>
+    </div>
+    <div class="download">
+        <img src="imgs/Dowwnload.png" alt="">
+    </div>
+    <div class="textbuttondownload">
+        <p>DOWNLOAD</p>
+    </div>
+    <p class="titulo-mapa">Interações por Região</p>
+    <p class="titulo-por-area">Interações por Área</p>
+    </div>
+    <img class="mapa" src="imgs/mapa.png">
+    <img class="dot1" src="imgs/dot map.png">
+    <img class="dot2" src="imgs/dot map.png">
+    <img class="dot3" src="imgs/dot map.png">
+    <img class="dot4" src="imgs/dot map.png">
+    <img class="dot5" src="imgs/dot map.png">
+    <div class="regiao1">
+        <p>Estado</p>
+        <img class="first-bar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="regiao2">
+        <p>Estado</p>
+        <img class="second-bar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="regiao3">
+        <p>Estado</p>
+        <img class="third-bar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="regiao4">
+        <p>Estado</p>
+        <img class="fourth-bar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="regiao5">
+        <p>Estado</p>
+        <img class="fifth-bar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="regiao6">
+        <p>Estado</p>
+        <img class="sixth-bar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    </div>
+    <p class="titulo-por-dep">Interações por Departamento</p>
+    <div class="dep1">
+        <p>Estado</p>
+        <img class="firstbar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="dep2">
+        <p>Estado</p>
+        <img class="secondbar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="dep3">
+        <p>Estado</p>
+        <img class="thirdbar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="dep4">
+        <p>Estado</p>
+        <img class="fourthbar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="dep5">
+        <p>Estado</p>
+        <img class="fifthbar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="dep6">
+        <p>Estado</p>
+        <img class="sixthbar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div class="dep7">
+        <p>Estado</p>
+        <img class="seventhbar" src="imgs/bar.png" width="286px" height="8px">
+        <p>00</p>
+    </div>
+    <div id="chart_div" style="width: 863px; height: 260px;"></div>
+    <div id="chart_divbar" style="width: 1230px; height: 250px; position: absolute; left: 90px; top: 1044px;"></div>
+</body>
+</html>
